@@ -325,7 +325,9 @@ def create_data_queues(args, eval_split=False):
         valid_queue = torch.utils.data.DataLoader(
             valid_data,
             batch_size=args.train.batch_size,
-            sampler=torch.utils.data.sampler.SubsetRandomSampler(np.random.permutation(indices[val_start:])),
+            sampler=torch.utils.data.sampler.SubsetRandomSampler(
+                np.random.permutation(indices[val_start:])
+            ),
             pin_memory=True,
             num_workers=0,
         )

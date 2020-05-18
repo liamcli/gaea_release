@@ -116,13 +116,15 @@ def main(args):
             save_dir, rng_seed, model, optimizer, architect, args.run.s3_bucket
         )
         scheduler.last_epoch = start_epochs - 1
-        num_train, num_classes, train_queue, valid_queue = train_utils.create_data_queues(
-            args
-        )
+        (
+            num_train,
+            num_classes,
+            train_queue,
+            valid_queue,
+        ) = train_utils.create_data_queues(args)
     except Exception as e:
         logging.info(e)
         start_epochs = 0
-
 
     best_valid = 0
     for epoch in range(start_epochs, args.run.epochs):
