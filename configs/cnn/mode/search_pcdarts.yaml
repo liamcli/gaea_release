@@ -1,0 +1,27 @@
+train:
+    scheduler: cosine
+    lr_anneal_cycles: 1
+    smooth_cross_entropy: false
+    batch_size: 256 
+    learning_rate: 0.1
+    learning_rate_min: 0.0
+    momentum: 0.9
+    weight_decay: 0.0003
+    init_channels: 16
+    layers: 8
+    autoaugment: false
+    cutout: false
+    auxiliary: false 
+    auxiliary_weight: 0.4
+    drop_path_prob: 0
+    grad_clip: 5
+
+
+hydra:
+    run:
+        dir: /data/search-${search.search_space}-${search.method}-${run.dataset}-${run.seed}
+    
+    
+
+  
+

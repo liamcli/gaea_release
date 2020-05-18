@@ -1,0 +1,22 @@
+defaults:
+    - mode: eval
+
+run:
+    s3_bucket: null
+    seed: 42
+    data: /data
+    dataset: cifar10 
+    epochs: 600
+    scheduler_epochs: ${run.epochs}
+    n_threads_data: 0
+    report_freq: 50
+    gpu: 0
+
+search:
+    search_space: darts
+
+hydra:
+    run:
+        dir: /data/eval-space-darts-${train.arch}-${run.dataset}-${run.seed}
+
+

@@ -1,0 +1,16 @@
+search:
+    method: eedarts
+    search_space: pcdarts 
+    nodes: 4
+    exclude_zero: false
+    arch_grad_clip: null 
+    train_portion: 0.5
+    arch_learning_rate: 0.1
+    edge_learning_rate: 0.1
+    discrete: false
+    adapt_lr: false 
+    arch_weight_decay: 0.0 
+    gd: false
+    learn_edges: true 
+    trace_norm: 8
+    

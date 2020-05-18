@@ -1,0 +1,32 @@
+defaults:
+    - mode: ???
+    - nas_algo: ???
+      optional: true
+    - search_config: ???
+      optional: true
+    - search_method: ${defaults.1.nas_algo}/${defaults.2.search_config}
+
+run:
+    s3_bucket: null
+    seed: 42
+    data: /data
+    dataset: cifar10 
+    epochs: ???
+    scheduler_epochs: 50
+    n_threads_data: 0
+    autodl: /code/AutoDL
+    report_freq: 50
+    test_code: false
+    gpu: 0
+
+search:
+    single_level: ???
+    exclude_zero: ???
+    track_running_stats: true 
+
+
+hydra:
+    run:
+        dir: /data/eval-space-darts-${train.arch}-${run.dataset}-${run.seed}
+
+

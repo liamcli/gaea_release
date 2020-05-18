@@ -1,0 +1,15 @@
+search:
+    method: egdas 
+    search_space: nas-bench-201
+    nodes: 3
+    exclude_zero: false
+    arch_grad_clip: null
+    arch_learning_rate: 0.01
+    discrete: true 
+    max_tau: 10
+    min_tau: 0.1
+    warmup_epochs: 50
+    arch_weight_decay: 0.01
+
+train:
+    layers: 5
