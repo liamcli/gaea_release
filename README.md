@@ -2,7 +2,7 @@
 This repository contains the code required to run the experiments for the DARTS search space over CIFAR-10 and the NAS-Bench-201 search space over CIFAR-10, CIFAR-100, and ImageNet16-120.  Code to run the experiments on the DARTS search space over ImageNet and the NAS-Bench-1Shot1 search spaces will be made available in forked repos subsequently.  
 
 First build the docker image using the provided docker file:
-`docker build -t [name] -f docker/config.dockerfile`
+`docker build -t [name] -f docker/config.dockerfile .`
 
 Then run a container with the image, e.g.:
 `docker run -it --gpus all --rm [name]`
