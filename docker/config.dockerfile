@@ -18,7 +18,7 @@ ENV CONDA_DEFAULT_ENV pytorch_env
 RUN conda install pytorch=1.4.0 torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install boto3
 RUN pip install scipy
-RUN pip install hydra-core
+RUN pip install hydra-core==0.11.3
 RUN pip install tensorboard
 RUN pip install xxhash cachetools
 

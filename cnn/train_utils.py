@@ -17,8 +17,6 @@ import torchvision.datasets as dset
 import torchvision.datasets as dset
 from torch.autograd import Variable
 from collections import deque
-import autoaugment.augmentation_transforms as augmentation_transforms
-import autoaugment.policies as found_policies
 import torchvision.transforms as transforms
 
 # Import AutoDL Nasbench-201 functions for data loading
@@ -77,13 +75,6 @@ class Cutout(object):
         return img
 
 
-def AutoAugment(img):
-    good_policies = found_policies.good_policies()
-    policy = good_policies[np.random.choice(len(good_policies))]
-    final_img = augmentation_transforms.apply_policy(policy, img)
-    return final_img
-
-
 def _data_transforms_cifar10(args):
     CIFAR_MEAN = [0.49139968, 0.48215827, 0.44653124]
     CIFAR_STD = [0.24703233, 0.24348505, 0.26158768]
@@ -98,8 +89,6 @@ def _data_transforms_cifar10(args):
     )
     if args.train.cutout:
         train_transform.transforms.append(Cutout(args.train.cutout_length))
-    if args.train.autoaugment:
-        train_transform.transforms.insert(0, AutoAugment)
     print(train_transform.transforms)
 
     valid_transform = transforms.Compose(

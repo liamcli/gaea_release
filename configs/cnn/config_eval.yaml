@@ -3,7 +3,7 @@ defaults:
 
 run:
     s3_bucket: null
-    seed: 42
+    seed: ???
     data: /data
     dataset: cifar10 
     epochs: 600

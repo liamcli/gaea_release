@@ -10,7 +10,6 @@ train:
     weight_decay: 0.0003
     init_channels: 36
     layers: 20
-    autoaugment: false
     cutout: true
     cutout_length: 16
     auxiliary: true

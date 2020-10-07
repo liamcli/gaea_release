@@ -1,14 +1,25 @@
 defaults:
+    # options: 
+    #   search_nasbench201: search phase settings for nasbench 201
+    #   search_pcdarts:search phase settings for pcdarts on CIFAR-10
+    #   eval: evaluation phase settings for darts search space on CIFAR-10
     - mode: ???
+    # options:
+    #   edarts: GAEA DARTS
+    #   eedarts: GAEA DARTS with edge learning
+    #   egdas: GAEA GDAS
     - nas_algo: ???
-      optional: true
+      optional: true # not actually optional but flag needed for parsing
+    # options:
+    #   [fill in with file from search_method/[nas_algo] folder]
+    #   e.g. method_edarts_space_nasbench201
     - search_config: ???
-      optional: true
+      optional: true # not actually optional but flag needed for parsing
     - search_method: ${defaults.1.nas_algo}/${defaults.2.search_config}
 
 run:
     s3_bucket: null
-    seed: 42
+    seed: ???
     data: /data
     dataset: cifar10 
     epochs: ???
@@ -20,7 +31,9 @@ run:
     gpu: 0
 
 search:
+    # Bi-level or single-level optimization
     single_level: ???
+    # Whether to exclude zero op from search space
     exclude_zero: ???
     track_running_stats: true 
 

@@ -5,12 +5,13 @@ search:
     exclude_zero: false
     arch_grad_clip: null 
     arch_learning_rate: 0.1
-    edge_learning_rate: 0.1
     discrete: false
     adapt_lr: false 
     arch_weight_decay: 0.0
     gd: false
+    # Use EEDARTS if edge learning desired.
     learn_edges: false
+    edge_learning_rate: 0.0
     trace_norm: null
 
 train:

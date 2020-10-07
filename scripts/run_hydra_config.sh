@@ -4,7 +4,7 @@ export PATH=/code/AutoDL/lib/:$PATH
 cd /code/nas-theory/cnn
 python train_search.py \
 	mode=$1 \
-        nas_algo=$2 \
+    nas_algo=$2 \
 	search_config=$3 \
 	run.seed=$4 \
 	run.epochs=$5 \
